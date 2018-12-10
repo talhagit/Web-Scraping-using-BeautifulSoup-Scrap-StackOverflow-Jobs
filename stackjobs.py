@@ -1,9 +1,11 @@
-"""Scrape the first ten pages of stackoverflow jobs for python jobs.
+"""Scrape the pages of stackoverflow jobs for python jobs.
 - The job title
 - The company name
 - The location
-- The date posted (in whatever date format makes the most sense to you)
+- The date posted
 - The link to the actual job posting
+-Is it Relocation?
+-Is it Visa Sponsored?
 """
 from bs4 import BeautifulSoup as bs
 from datetime import datetime
@@ -113,7 +115,7 @@ if __name__ == '__main__':
         save_results(data, output)
 
     output.close()
-    print('Done! Results saved in results/{}'.format(output_file))
+    print('Done, Path to file: results/{}'.format(output_file))
     
 
     
