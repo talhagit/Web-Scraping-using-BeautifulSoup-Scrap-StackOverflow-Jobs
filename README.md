@@ -1,4 +1,3 @@
-This Repo is the updation of : https://github.com/musflood/job-scraper/blob/master/scraper.py
 
 # Web-Scraping-using-BeautifulSoup-Scrap-StackOverflow-Jobs
 This code scrape Jobs for last 24 hours from StackOverflow.com and sends you an email for all job titles only and all the scrapped info can be output to a csv
