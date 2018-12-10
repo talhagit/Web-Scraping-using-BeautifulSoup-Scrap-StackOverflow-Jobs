@@ -5,7 +5,6 @@ This code scrape Jobs for last 24 hours from StackOverflow.com and sends you an 
 
 **Requirments**
 
-* Bullet list
 
 * pip install beautifulsoup4
 
