@@ -5,13 +5,15 @@ This code scrape Jobs for last 24 hours from StackOverflow.com and sends you an 
 
 **Requirments**
 
-pip install beautifulsoup4
+* Bullet list
 
-pip install pandas
+* pip install beautifulsoup4
 
-You need to update your email addresses and password in the file to successfully send an email
+* pip install pandas
 
-You need to set a folder 'results' in your directory.
+* You need to update your email addresses and password in the file to successfully send an email
+
+* You need to set a folder 'results' in your directory.
 
 **How to run**
 
