@@ -1,6 +1,6 @@
 
-# Web-Scraping-using-BeautifulSoup-Scrap-StackOverflow-Jobs
-This code scrape Jobs for last 24 hours from StackOverflow.com and sends you an email for all job titles only and all the scrapped info can be output to a csv
+# Web-Scraping-using-BeautifulSoup-StackOverflow-Jobs
+This code scrape Jobs for last 24 hours from StackOverflow.com and sends you an email for all job titles only and all the scrapped info will be output to a csv
 
 **Requirments**
 
