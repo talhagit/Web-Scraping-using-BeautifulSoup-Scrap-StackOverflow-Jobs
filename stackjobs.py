@@ -18,7 +18,7 @@ import smtplib
 DOMAIN = 'https://stackoverflow.com'
 
 
-def scrape_for_jobs(response):
+def scraper(response):
     """Scrape a page for Python jobs.
     """
     content = bs(response.content, 'html.parser')
@@ -73,6 +73,7 @@ def scrape_for_jobs(response):
     return all_job_data
 
 def send_email(username,password,body):
+    """Sending Job titles n Email"""
     s = smtplib.SMTP('smtp-mail.outlook.com:587')
     s.starttls()
     TO = "someone@someone.com"
@@ -82,7 +83,7 @@ def send_email(username,password,body):
     s.sendmail(FROM, TO,BODY)
 
 
-def save_results(results, output):
+def results(results, output):
     """Save the scraping results to a file."""
     df=pd.DataFrame(results)
     DfSubset=df.loc[df[3].str.contains(r'< \d+(?:h.*)|\d+(?:h.*)')]
@@ -93,11 +94,13 @@ def save_results(results, output):
     output.write('\n' + '\n'.join(data))
 
 
-def get_job_page(page_num):
-    """Scrape num page of the job postings."""
+def job_page(page_num):
+    """Scrape the page number from job postings."""
     response = requests.get(DOMAIN + '/jobs?pg={}&sort=p'.format(page_num))
-    return scrape_for_jobs(response)
+    return scraper(response)
 
+
+##Main Begins
 if __name__ == '__main__':
     dir_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'results')#Create the folder "results in your directory
     output_file = 'Python jobs - {}.txt'.format(datetime.now().strftime('%m-%d-%y'))
@@ -108,11 +111,11 @@ if __name__ == '__main__':
 
     output = open(output_path, 'a',encoding="utf-8")
 
-    print('Scraping the StackOverflow Job site for Python jobs!')
+    print('Scraping the StackOverflow.com Jobs!!!')
     for n in range(1,25):
         print('Scraping page {}...'.format(n))
-        data = get_job_page(n)
-        save_results(data, output)
+        data = job_page(n)
+        results(data, output)
 
     output.close()
     print('Done, Path to file: results/{}'.format(output_file))
