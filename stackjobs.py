@@ -103,7 +103,7 @@ def job_page(page_num):
 ##Main Begins
 if __name__ == '__main__':
     dir_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), 'results')#Create the folder "results in your directory
-    output_file = 'Python jobs - {}.txt'.format(datetime.now().strftime('%m-%d-%y'))
+    output_file = 'StackOverflow jobs - {}.txt'.format(datetime.now().strftime('%m-%d-%y'))
     output_path = os.path.join(dir_path, output_file)
 
     with open(output_path, 'w', encoding="utf-8") as output:
